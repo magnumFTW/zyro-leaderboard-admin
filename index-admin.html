@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Leaderboard Control</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>🔒 Leaderboard Admin Panel</h1>
+            <p class="subtitle">Control competition timer</p>
+        </header>
+
+        <!-- Login Section -->
+        <section id="login-section" class="card">
+            <h2>Authentication</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="admin-password">Admin Password</label>
+                    <input 
+                        type="password" 
+                        id="admin-password" 
+                        placeholder="Enter admin password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Login
+                </button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+        </section>
+
+        <!-- Admin Controls (Hidden until logged in) -->
+        <section id="admin-controls" class="hidden">
+            <!-- Status Display -->
+            <div class="card">
+                <h2>Competition Status</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="status-label">Status:</span>
+                        <span id="status-value" class="status-badge">Inactive</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Start Time:</span>
+                        <span id="start-time" class="status-value">—</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">End Time:</span>
+                        <span id="end-time" class="status-value">—</span>
+                    </div>
+                    <div class="status-item full-width">
+                        <span class="status-label">Time Remaining:</span>
+                        <div id="countdown" class="countdown">
+                            <span id="admin-days">00</span>d 
+                            <span id="admin-hours">00</span>h 
+                            <span id="admin-minutes">00</span>m 
+                            <span id="admin-seconds">00</span>s
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="card">
+                <h2>Start Competition</h2>
+                <div class="duration-buttons">
+                    <button id="start-7days-btn" class="btn btn-success" data-duration="7">
+                        📅 Start 7 Days
+                    </button>
+                    <button id="start-14days-btn" class="btn btn-success" data-duration="14">
+                        📅 Start 14 Days
+                    </button>
+                    <button id="start-30days-btn" class="btn btn-success" data-duration="30">
+                        📅 Start 30 Days
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <div class="card">
+                <h2>Reset Competition</h2>
+                <button id="reset-btn" class="btn btn-danger">
+                    🔄 Reset Competition
+                </button>
+                <div id="control-message" class="message"></div>
+            </div>
+
+            <!-- Logout -->
+            <div class="card">
+                <button id="logout-btn" class="btn btn-secondary">
+                    Logout
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="admin-footer">
+            <p>Leaderboard Backend Admin Panel v1.0</p>
+        </footer>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

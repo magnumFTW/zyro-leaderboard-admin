@@ -16,7 +16,7 @@
     // # CONFIGURATION
     // ===================================================================
     const CONFIG = {
-        API_BASE_URL: 'https://zyro-leaderboard-backend.vercel.app/api', // Change to production URL
+        API_BASE_URL: 'https://zyro-leaderboard-backend.vercel.app', // Change to production URL
         STATUS_REFRESH_INTERVAL: 5000, // 5 seconds
         TIMER_UPDATE_INTERVAL: 1000 // 1 second
     };
